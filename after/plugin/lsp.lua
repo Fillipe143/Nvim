@@ -1,7 +1,7 @@
-    local lsp_zero = require('lsp-zero')
+local lsp_zero = require('lsp-zero')
 
 lsp_zero.on_attach(function(client, bufnr)
-    local opts = {buffer = bufnr, remap = false}
+    local opts = { buffer = bufnr, remap = false }
 
     vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
     vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
@@ -13,11 +13,25 @@ lsp_zero.on_attach(function(client, bufnr)
     vim.keymap.set("n", "<leader>vrr", function() vim.lsp.buf.references() end, opts)
     vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts)
     vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
+    vim.keymap.set("n", "<leader>ai", function()
+        local params = vim.lsp.util.make_range_params()
+        params.context = { only = { "source.organizeImports" } }
+        local result = vim.lsp.buf_request_sync(0, "textDocument/codeAction", params)
+        for cid, res in pairs(result or {}) do
+            for _, r in pairs(res.result or {}) do
+                if r.edit then
+                    local enc = (vim.lsp.get_client_by_id(cid) or {}).offset_encoding or "utf-16"
+                    vim.lsp.util.apply_workspace_edit(r.edit, enc)
+                end
+            end
+        end
+        vim.lsp.buf.format({ async = false })
+    end, opts)
 end)
 
 require('mason').setup({})
 require('mason-lspconfig').setup({
-    ensure_installed = {'bashls', 'gopls','golangci_lint_ls', 'tsserver', 'arduino_language_server', 'java_language_server', 'jdtls'},
+    ensure_installed = { 'lua_ls', 'bashls', 'gopls', 'golangci_lint_ls', 'tsserver', 'arduino_language_server', 'java_language_server', 'jdtls' },
     handlers = {
         lsp_zero.default_setup,
         lua_ls = function()
@@ -28,13 +42,13 @@ require('mason-lspconfig').setup({
 })
 
 local cmp = require('cmp')
-local cmp_select = {behavior = cmp.SelectBehavior.Select}
+local cmp_select = { behavior = cmp.SelectBehavior.Select }
 
 cmp.setup({
     sources = {
-        {name = 'path'},
-        {name = 'nvim_lsp'},
-        {name = 'nvim_lua'},
+        { name = 'path' },
+        { name = 'nvim_lsp' },
+        { name = 'nvim_lua' },
     },
     formatting = lsp_zero.cmp_format(),
     mapping = cmp.mapping.preset.insert({
