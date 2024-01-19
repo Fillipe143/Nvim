@@ -29,9 +29,18 @@ lsp_zero.on_attach(function(client, bufnr)
     end, opts)
 end)
 
+require("lspconfig").arduino_language_server.setup({
+    cmd = {
+        "arduino-language-server",
+        "-cli-config", "/home/fillpe/.arduino15/arduino-cli.yaml",
+        "-fqbn",
+        "esp32:esp32:esp32"
+    }
+})
+
 require('mason').setup({})
 require('mason-lspconfig').setup({
-    ensure_installed = { 'lua_ls', 'bashls', 'gopls', 'golangci_lint_ls', 'tsserver', 'arduino_language_server', 'java_language_server', 'jdtls' },
+    ensure_installed = { 'lua_ls', 'bashls', 'intelephense', 'gopls', 'golangci_lint_ls', 'tsserver', 'arduino_language_server', 'java_language_server', 'jdtls' },
     handlers = {
         lsp_zero.default_setup,
         lua_ls = function()
