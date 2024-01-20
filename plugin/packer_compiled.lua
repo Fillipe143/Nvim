@@ -149,6 +149,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/fillipe/.local/share/nvim/site/pack/packer/start/vim-be-good",
     url = "https://github.com/ThePrimeagen/vim-be-good"
+  },
+  ["vim-visual-multi"] = {
+    loaded = true,
+    path = "/home/fillipe/.local/share/nvim/site/pack/packer/start/vim-visual-multi",
+    url = "https://github.com/mg979/vim-visual-multi"
   }
 }
 
