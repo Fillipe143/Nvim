@@ -8,10 +8,11 @@ return require("packer").startup(function(use)
     use "wbthomason/packer.nvim"
     use "ThePrimeagen/harpoon"
     use "ThePrimeagen/vim-be-good"
+    use 'Exafunction/codeium.vim'
+
 
     use { 'mg979/vim-visual-multi', branch = 'master' }
     use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }
-    use { "codota/tabnine-nvim", run = "./dl_binaries.sh" }
 
     use {
         "VonHeikemen/lsp-zero.nvim",
