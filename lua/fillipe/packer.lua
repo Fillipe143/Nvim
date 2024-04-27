@@ -7,9 +7,7 @@ return require("packer").startup(function(use)
     -- Packer can manage itself
     use "wbthomason/packer.nvim"
     use "ThePrimeagen/harpoon"
-    use "ThePrimeagen/vim-be-good"
-    use 'Exafunction/codeium.vim'
-
+    use "lukas-reineke/indent-blankline.nvim"
 
     use { 'mg979/vim-visual-multi', branch = 'master' }
     use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }
@@ -31,16 +29,19 @@ return require("packer").startup(function(use)
         }
     }
 
+    use("water-sucks/darkrose.nvim")
+    use "n1ghtmare/noirblaze-vim"
+
     use {
         "nvim-telescope/telescope.nvim", tag = "0.1.5",
         requires = { { "nvim-lua/plenary.nvim" } }
     }
 
-    use {
-        "ellisonleao/gruvbox.nvim", as = "gruvbox",
-        config = function()
-            vim.cmd("colorscheme gruvbox")
-            if ColorMyPencils ~= nil then ColorMyPencils() end
-        end
-    }
+    --use {
+    --    "ellisonleao/gruvbox.nvim", as = "gruvbox",
+    --    config = function()
+    --        vim.cmd("colorscheme gruvbox")
+    --        if ColorMyPencils ~= nil then ColorMyPencils() end
+    --    end
+    --}
 end)

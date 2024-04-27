@@ -49,8 +49,8 @@ local function save_profiles(threshold)
 end
 
 time([[Luarocks path setup]], true)
-local package_path_str = "/home/fillipe/.cache/nvim/packer_hererocks/2.1.1702233742/share/lua/5.1/?.lua;/home/fillipe/.cache/nvim/packer_hererocks/2.1.1702233742/share/lua/5.1/?/init.lua;/home/fillipe/.cache/nvim/packer_hererocks/2.1.1702233742/lib/luarocks/rocks-5.1/?.lua;/home/fillipe/.cache/nvim/packer_hererocks/2.1.1702233742/lib/luarocks/rocks-5.1/?/init.lua"
-local install_cpath_pattern = "/home/fillipe/.cache/nvim/packer_hererocks/2.1.1702233742/lib/lua/5.1/?.so"
+local package_path_str = "/home/fillipe/.cache/nvim/packer_hererocks/2.1.1713773202/share/lua/5.1/?.lua;/home/fillipe/.cache/nvim/packer_hererocks/2.1.1713773202/share/lua/5.1/?/init.lua;/home/fillipe/.cache/nvim/packer_hererocks/2.1.1713773202/lib/luarocks/rocks-5.1/?.lua;/home/fillipe/.cache/nvim/packer_hererocks/2.1.1713773202/lib/luarocks/rocks-5.1/?/init.lua"
+local install_cpath_pattern = "/home/fillipe/.cache/nvim/packer_hererocks/2.1.1713773202/lib/lua/5.1/?.so"
 if not string.find(package.path, package_path_str, 1, true) then
   package.path = package.path .. ';' .. package_path_str
 end
@@ -84,21 +84,20 @@ _G.packer_plugins = {
     path = "/home/fillipe/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
     url = "https://github.com/hrsh7th/cmp-nvim-lsp"
   },
-  ["codeium.vim"] = {
+  ["darkrose.nvim"] = {
     loaded = true,
-    path = "/home/fillipe/.local/share/nvim/site/pack/packer/start/codeium.vim",
-    url = "https://github.com/Exafunction/codeium.vim"
-  },
-  gruvbox = {
-    config = { "\27LJ\2\nZ\0\0\3\0\4\0\n6\0\0\0009\0\1\0'\2\2\0B\0\2\0016\0\3\0\n\0\0\0X\0\2€6\0\3\0B\0\1\1K\0\1\0\19ColorMyPencils\24colorscheme gruvbox\bcmd\bvim\0" },
-    loaded = true,
-    path = "/home/fillipe/.local/share/nvim/site/pack/packer/start/gruvbox",
-    url = "https://github.com/ellisonleao/gruvbox.nvim"
+    path = "/home/fillipe/.local/share/nvim/site/pack/packer/start/darkrose.nvim",
+    url = "https://github.com/water-sucks/darkrose.nvim"
   },
   harpoon = {
     loaded = true,
     path = "/home/fillipe/.local/share/nvim/site/pack/packer/start/harpoon",
     url = "https://github.com/ThePrimeagen/harpoon"
+  },
+  ["indent-blankline.nvim"] = {
+    loaded = true,
+    path = "/home/fillipe/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
+    url = "https://github.com/lukas-reineke/indent-blankline.nvim"
   },
   ["lsp-zero.nvim"] = {
     loaded = true,
@@ -114,6 +113,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/fillipe/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
+  },
+  ["noirblaze-vim"] = {
+    loaded = true,
+    path = "/home/fillipe/.local/share/nvim/site/pack/packer/start/noirblaze-vim",
+    url = "https://github.com/n1ghtmare/noirblaze-vim"
   },
   ["nvim-cmp"] = {
     loaded = true,
@@ -145,11 +149,6 @@ _G.packer_plugins = {
     path = "/home/fillipe/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
-  ["vim-be-good"] = {
-    loaded = true,
-    path = "/home/fillipe/.local/share/nvim/site/pack/packer/start/vim-be-good",
-    url = "https://github.com/ThePrimeagen/vim-be-good"
-  },
   ["vim-visual-multi"] = {
     loaded = true,
     path = "/home/fillipe/.local/share/nvim/site/pack/packer/start/vim-visual-multi",
@@ -158,10 +157,6 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: gruvbox
-time([[Config for gruvbox]], true)
-try_loadstring("\27LJ\2\nZ\0\0\3\0\4\0\n6\0\0\0009\0\1\0'\2\2\0B\0\2\0016\0\3\0\n\0\0\0X\0\2€6\0\3\0B\0\1\1K\0\1\0\19ColorMyPencils\24colorscheme gruvbox\bcmd\bvim\0", "config", "gruvbox")
-time([[Config for gruvbox]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then
