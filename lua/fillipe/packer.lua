@@ -8,11 +8,21 @@ return require("packer").startup(function(use)
     use "wbthomason/packer.nvim"
     use "ThePrimeagen/harpoon"
     use "ThePrimeagen/vim-be-good"
-    use 'Exafunction/codeium.vim'
-
+    -- use 'Exafunction/codeium.vim'
 
     use { 'mg979/vim-visual-multi', branch = 'master' }
     use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }
+
+--    use {
+--        'Exafunction/codeium.nvim',
+--        requires = {
+--            'nvim-lua/plenary.nvim',
+--            'hrsh7th/nvim-cmp',
+--        },
+--        config = function()
+--            require('codeium').setup({})
+--        end
+--    }
 
     use {
         "VonHeikemen/lsp-zero.nvim",

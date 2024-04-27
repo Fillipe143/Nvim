@@ -40,7 +40,7 @@ require("lspconfig").arduino_language_server.setup({
 
 require('mason').setup({})
 require('mason-lspconfig').setup({
-    ensure_installed = { 'lua_ls', 'bashls', 'intelephense', 'gopls', 'golangci_lint_ls', 'tsserver', 'arduino_language_server', 'java_language_server', 'jdtls' },
+    ensure_installed = { 'lua_ls', 'bashls', 'intelephense', 'rust_analyzer', 'zls', 'gopls', 'golangci_lint_ls', 'tsserver', 'arduino_language_server', 'java_language_server', 'jdtls', 'ast_grep', 'pyright'},
     handlers = {
         lsp_zero.default_setup,
         lua_ls = function()
@@ -56,8 +56,10 @@ local cmp_select = { behavior = cmp.SelectBehavior.Select }
 cmp.setup({
     sources = {
         { name = 'path' },
+        { name = 'codeium' },
         { name = 'nvim_lsp' },
         { name = 'nvim_lua' },
+        { name = 'mason' },
     },
     formatting = lsp_zero.cmp_format(),
     mapping = cmp.mapping.preset.insert({

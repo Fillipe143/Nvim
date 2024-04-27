@@ -84,10 +84,10 @@ _G.packer_plugins = {
     path = "/home/fillipe/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
     url = "https://github.com/hrsh7th/cmp-nvim-lsp"
   },
-  ["codeium.vim"] = {
+  ["darkrose.nvim"] = {
     loaded = true,
-    path = "/home/fillipe/.local/share/nvim/site/pack/packer/start/codeium.vim",
-    url = "https://github.com/Exafunction/codeium.vim"
+    path = "/home/fillipe/.local/share/nvim/site/pack/packer/start/darkrose.nvim",
+    url = "https://github.com/water-sucks/darkrose.nvim"
   },
   gruvbox = {
     config = { "\27LJ\2\nZ\0\0\3\0\4\0\n6\0\0\0009\0\1\0'\2\2\0B\0\2\0016\0\3\0\n\0\0\0X\0\2€6\0\3\0B\0\1\1K\0\1\0\19ColorMyPencils\24colorscheme gruvbox\bcmd\bvim\0" },
@@ -114,6 +114,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/fillipe/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
+  },
+  ["noirblaze-vim"] = {
+    loaded = true,
+    path = "/home/fillipe/.local/share/nvim/site/pack/packer/start/noirblaze-vim",
+    url = "https://github.com/n1ghtmare/noirblaze-vim"
   },
   ["nvim-cmp"] = {
     loaded = true,
