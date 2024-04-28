@@ -1,4 +1,5 @@
 " Name:       lupper.vim
+" darkroseName:       lupper.vim
 " Version:    0.1.0
 " Maintainer: github.com/hossein-lap
 " License:    The MIT License (MIT)
@@ -64,9 +65,9 @@ let s:light_purple    = { "gui": "#a790d5", "cterm": "140"  }
 "let s:light_yellow    = { "gui": "#ffff87", "cterm": "228"  }
 "let s:dark_yellow     = { "gui": "#A89C14", "cterm": "3"    }
 
-let s:yellow          = { "gui": "#F3E430", "cterm": "11"   }
-let s:light_yellow    = { "gui": "#d75f87", "cterm": "168"  }
-let s:dark_yellow     = { "gui": "#ff5f87", "cterm": "204"    }
+let s:yellow          = { "gui": "#E430F3", "cterm": "11"   }
+let s:light_yellow    = { "gui": "#ff87ff", "cterm": "168"  }
+let s:dark_yellow     = { "gui": "#9C14A8", "cterm": "204"    }
 
 let s:background = &background
 

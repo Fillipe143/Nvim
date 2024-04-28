@@ -40,7 +40,6 @@ require("lspconfig").arduino_language_server.setup({
 
 require('mason').setup({})
 require('mason-lspconfig').setup({
-    ensure_installed = { 'lua_ls', 'bashls', 'intelephense', 'rust_analyzer', 'zls', 'gopls', 'golangci_lint_ls', 'tsserver', 'arduino_language_server', 'java_language_server', 'jdtls', 'ast_grep', 'pyright'},
     handlers = {
         lsp_zero.default_setup,
         lua_ls = function()
@@ -62,6 +61,16 @@ cmp.setup({
         { name = 'mason' },
     },
     formatting = lsp_zero.cmp_format(),
+    window = {
+       --completion = cmp.config.window.bordered({
+       --    border = "rounded",
+       --    winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,CursorLine:PmenuSel,Search:None"
+       --}),
+       --documentation = cmp.config.window.bordered({
+       --    border = "rounded",
+       --    winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,CursorLine:PmenuSel,Search:None"
+       --}),
+    },
     mapping = cmp.mapping.preset.insert({
         ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
         ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
