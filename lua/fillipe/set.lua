@@ -25,5 +25,6 @@ vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
 
 vim.opt.splitbelow = true
+vim.opt.splitright = true
 
 vim.g.mapleader =  " "
