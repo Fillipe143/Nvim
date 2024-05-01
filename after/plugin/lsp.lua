@@ -29,17 +29,16 @@ lsp_zero.on_attach(function(client, bufnr)
     end, opts)
 end)
 
-require("lspconfig").arduino_language_server.setup({
+require("lspconfig").clangd.setup {
     cmd = {
-        "arduino-language-server",
-        "-cli-config", "/home/fillpe/.arduino15/arduino-cli.yaml",
-        "-fqbn",
-        "esp32:esp32:esp32"
+        "clangd",
+        "--fallback-style=webkit"
     }
-})
+}
 
 require('mason').setup({})
 require('mason-lspconfig').setup({
+    ensure_installed = { 'lua_ls', 'clangd', 'bashls', 'gopls', 'golangci_lint_ls', 'tsserver' },
     handlers = {
         lsp_zero.default_setup,
         lua_ls = function()
@@ -62,14 +61,14 @@ cmp.setup({
     },
     formatting = lsp_zero.cmp_format(),
     window = {
-       --completion = cmp.config.window.bordered({
-       --    border = "rounded",
-       --    winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,CursorLine:PmenuSel,Search:None"
-       --}),
-       --documentation = cmp.config.window.bordered({
-       --    border = "rounded",
-       --    winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,CursorLine:PmenuSel,Search:None"
-       --}),
+        --completion = cmp.config.window.bordered({
+        --    border = "rounded",
+        --    winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,CursorLine:PmenuSel,Search:None"
+        --}),
+        --documentation = cmp.config.window.bordered({
+        --    border = "rounded",
+        --    winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,CursorLine:PmenuSel,Search:None"
+        --}),
     },
     mapping = cmp.mapping.preset.insert({
         ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
